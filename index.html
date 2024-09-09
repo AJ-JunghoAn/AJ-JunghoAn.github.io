@@ -566,7 +566,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="All">
-              <a href="#">
+              <a href="#" class="project-link">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -584,7 +584,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="All">
-              <a href="#">
+              <a href="#" class="project-link">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -602,7 +602,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="All">
-              <a href="#">
+              <a href="#" class="project-link">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -620,7 +620,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="All">
-              <a href="#">
+              <a href="#" class="project-link">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -645,59 +645,58 @@
 
       </article>
 
-      <!-- Modal Structure -->
+      <!-- 모달 구조 -->
       <div id="projectModal" class="modal">
         <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <div id="modal-body">
-            <!-- Dynamic content will be loaded here -->
-          </div>
+           <span class="close-button">&times;</span>
+           <div id="modal-body">
+             <!-- 동적으로 콘텐츠가 로드될 부분 -->
+           </div>
         </div>
       </div>
-      
+
       <!-- JavaScript 코드 추가 -->
-        <script>
-          // 모달 기능
-          const modal = document.getElementById("projectModal");
-          const closeButton = document.querySelector(".close-button");
+      <script>
+         // 모달 기능
+         const modal = document.getElementById("projectModal");
+         const closeButton = document.querySelector(".close-button");
 
-          // 각 프로젝트 아이템에 클릭 이벤트 추가
-          document.querySelectorAll(".project-link").forEach((project) => {
-            project.addEventListener("click", function (event) {
-              event.preventDefault(); // 기본 동작 방지
+         // 각 프로젝트 아이템에 클릭 이벤트 추가
+         document.querySelectorAll(".project-link").forEach((project) => {
+         project.addEventListener("click", function (event) {
+         event.preventDefault(); // 기본 동작 방지
 
-              // 프로젝트 제목 가져오기
-              const projectTitle = this.querySelector(".project-title").textContent;
+         // 프로젝트 제목 가져오기
+         const projectTitle = this.querySelector(".project-title").textContent;
 
-              // 모달에 표시할 내용 설정
-              let modalContent = "";
-              if (projectTitle === "TMS Robot") {
-                modalContent = "<p>1. 뇌자극 로봇입니다.</p>";
-              } else if (projectTitle === "EXO-suits") {
-                modalContent = "<p>2. 입는 로봇입니다.</p>";
-              }
+         // 모달에 표시할 내용 설정
+         let modalContent = "";
+         if (projectTitle === "TMS Robot") {
+            modalContent = "<p>1. 뇌자극 로봇입니다.</p>";
+         } else if (projectTitle === "EXO-suits") {
+           modalContent = "<p>2. 입는 로봇입니다.</p>";
+         }
 
-              // 모달 내용 업데이트
-              document.getElementById("modal-body").innerHTML = modalContent;
+         // 모달 내용 업데이트
+         document.getElementById("modal-body").innerHTML = modalContent;
 
-              // 모달 보이기
-              modal.style.display = "block";
-            });
-          });
+         // 모달 보이기
+         modal.style.display = "block";
+       });
+     });
 
-          // 모달 닫기 기능
-          closeButton.addEventListener("click", function () {
-            modal.style.display = "none";
-          });
+    // 모달 닫기 기능
+    closeButton.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
 
-          // 모달 외부를 클릭했을 때 닫기
-          window.addEventListener("click", function (event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          });
-        </script>
-
+    // 모달 외부를 클릭했을 때 닫기
+    window.addEventListener("click", function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+   </script>
 
 
 
