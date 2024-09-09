@@ -567,7 +567,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="All">
-              <a href="#" class="project-link">
+              <a href="#" class="project-link" data-project="tms-robot">
 
                 <figure class="project-img">
                   <!-- <div class="project-item-icon-box">
@@ -585,7 +585,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="All">
-              <a href="#" class="project-link">
+              <a href="#" class="project-link" data-project="exo-suits">
 
                 <figure class="project-img">
                   <!-- <div class="project-item-icon-box">
@@ -645,6 +645,54 @@
         </section>
 
       </article>
+
+      <!-- 프로젝트 설명 섹션 -->
+      <div id="project-details" class="project-details" style="display:none;">
+         <button id="back-button">Back</button>
+         <div id="tms-robot" class="project-description" style="display:none;">
+            <h2>TMS Robot</h2>
+            <p>뇌자극 로봇입니다.</p>
+            <!-- 추가 설명 내용 -->
+         </div>
+       <div id="exo-suits" class="project-description" style="display:none;">
+            <h2>EXO-suits</h2>
+            <p>입는 로봇입니다.</p>
+            <!-- 추가 설명 내용 -->
+         </div>
+        </div>
+
+      <script>
+      // JavaScript를 통해 클릭 시 프로젝트 설명을 표시
+      document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault(); // 링크 기본 동작 막기
+      
+          // 선택된 프로젝트 ID 가져오기
+          const projectId = this.getAttribute('data-project');
+      
+          // 모든 프로젝트 설명 숨기기
+          document.querySelectorAll('.project-description').forEach(desc => {
+            desc.style.display = 'none';
+          });
+
+          // 선택된 프로젝트 설명 표시
+          document.getElementById(projectId).style.display = 'block';
+
+          // 프로젝트 리스트 숨기고, 설명 섹션 보이기
+          document.querySelector('.portfolio').style.display = 'none';
+          document.getElementById('project-details').style.display = 'block';
+        });
+      });
+
+      // 뒤로 가기 버튼 기능
+      document.getElementById('back-button').addEventListener('click', function() {
+        document.getElementById('project-details').style.display = 'none';
+        document.querySelector('.portfolio').style.display = 'block';
+      });
+      </script>
+
+
+
 
       <!--
         - #BLOG
