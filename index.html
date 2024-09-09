@@ -128,11 +128,11 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Experience</button>
+            <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Project</button>
+            <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
 
           <!-- <li class="navbar-item">
@@ -334,7 +334,7 @@
         - #Resume
       -->
 
-      <article class="Experience" data-page="Experience">
+      <article class="resume" data-page="resume">
 
         <header>
           <h2 class="h2 article-title">Experience</h2>
@@ -502,7 +502,7 @@
         - #Portfolio
       -->
 
-      <article class="Project" data-page="Project">
+      <article class="portfolio" data-page="portfolio">
 
         <header>
           <h2 class="h2 article-title">Project</h2>
@@ -579,7 +579,7 @@
 
                 <h3 class="project-title">TMS Robot</h3>
 
-                <p class="project-category">C++</p>
+                <p class="project-category">C++/CANopen/Raspberry pi2<br><br> A control system for a TMS Robot by connecting six motors in series and controlling each motor individually via CANopen communication.</p>
 
               </a>
             </li>
@@ -597,7 +597,7 @@
 
                 <h3 class="project-title">EXO-suits</h3>
 
-                <p class="project-category">C/Python/Swift</p>
+                <p class="project-category">C/Python/Swift/CAN/Wifi/ESP32/DSP<br><br> Responsible for maintaining and enhancing the existing code, which involves network communication using CAN and WiFi, as well as improvements UI. </p>
 
               </a>
             </li>
@@ -615,7 +615,7 @@
 
                 <h3 class="project-title">Rail Profiler</h3>
 
-                <p class="project-category">C#</p>
+                <p class="project-category">C#/Winform/RS-232/BLE<br><br> Designed a robot to measure railway wear using displacement sensors to assess wear levels. Developed a control system to manage motor operations and configured the UI to receive data</p>
 
               </a>
             </li>
@@ -633,7 +633,10 @@
 
                 <h3 class="project-title">UCSD Town + Autonomous Vehicle</h3>
 
-                <p class="project-category">Python</p>
+                <p class="project-category">Python/DonkeyCar/Jetson Nano<br><br> Conducted data collection and improvement efforts to enable the prototype to:
+
+                  <br>• Detect lanes for dynamic lane-switching.
+                  <br>• Identify vehicles and autonomously change lanes to pass. </p>
 
               </a>
             </li>
@@ -645,53 +648,6 @@
         </section>
 
       </article>
-
-      <!-- 프로젝트 설명 섹션 -->
-      <div id="project-details" class="project-details" style="display:none;">
-         <button id="back-button">Back</button>
-         <div id="tms-robot" class="project-description" style="display:none;">
-            <h2>TMS Robot</h2>
-            <p>뇌자극 로봇입니다.</p>
-            <!-- 추가 설명 내용 -->
-         </div>
-       <div id="exo-suits" class="project-description" style="display:none;">
-            <h2>EXO-suits</h2>
-            <p>입는 로봇입니다.</p>
-            <!-- 추가 설명 내용 -->
-         </div>
-        </div>
-
-      <script>
-      // JavaScript를 통해 클릭 시 프로젝트 설명을 표시
-      document.querySelectorAll('.project-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-          event.preventDefault(); // 링크 기본 동작 막기
-      
-          // 선택된 프로젝트 ID 가져오기
-          const projectId = this.getAttribute('data-project');
-      
-          // 모든 프로젝트 설명 숨기기
-          document.querySelectorAll('.project-description').forEach(desc => {
-            desc.style.display = 'none';
-          });
-
-          // 선택된 프로젝트 설명 표시
-          document.getElementById(projectId).style.display = 'block';
-
-          // 프로젝트 리스트 숨기고, 설명 섹션 보이기
-          document.querySelector('.portfolio').style.display = 'none';
-          document.getElementById('project-details').style.display = 'block';
-        });
-      });
-
-      // 뒤로 가기 버튼 기능
-      document.getElementById('back-button').addEventListener('click', function() {
-        document.getElementById('project-details').style.display = 'none';
-        document.querySelector('.portfolio').style.display = 'block';
-      });
-      </script>
-
-
 
 
       <!--
